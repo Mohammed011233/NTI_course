@@ -49,7 +49,7 @@
                 <button type="submit" name="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
             </div>
         </form>
-        <div class="text-center">Already have an account? <a href="login.php">Sign in</a></div>
+        <div class="text-center">Already have an account? <a href="index.php">Sign in</a></div>
     </div>
 </body>
 
@@ -135,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         move_uploaded_file($img_tmppath , $uploaded_path);
 
         #insert data to the database
-
+        $password = md5($password);
         $quary = "INSERT INTO users (`name` , `email` , `password` , `image` ) VALUES ('$fullname' , '$email' , '$password' , '$uploaded_path')";
 
         $run_quary = mysqli_query($connect , $quary);

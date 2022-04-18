@@ -8,6 +8,8 @@ $password = '';
 
 $connect = mysqli_connect($server  , $DB_user , $password, $DB_name);
 
+
+
 if($connect == false){
     echo "thare are errors in connection database" . mysqli_connect_error() . mysqli_connect_errno();
 }
